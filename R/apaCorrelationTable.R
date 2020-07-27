@@ -52,7 +52,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
      output_ci_rtf <- matrix(" ", number_variables, number_columns)
 
      output_descriptives   <- matrix(" ",number_variables,2)
-     output_variable_names <- paste(as.character(1:number_variables),". ",var)) ###names(data),sep=""
+     output_variable_names <- paste(as.character(1:number_variables),". ",var) ###names(data),sep=""
      
      for (i in 1:number_variables) {
           output_descriptives[i,1] <- txt.number(mean(data[,i], na.rm=TRUE))
