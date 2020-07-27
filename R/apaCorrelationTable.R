@@ -85,8 +85,8 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
  #    third_line <- rep(" ", length(second_line))
 
 
- #    output_matrix_console <- rbind(first_line, second_line)
- #    output_matrix_rtf     <- rbind(first_line_rtf, second_line_rtf)
+     output_matrix_console <- rbind(first_line, lef_padding)
+     output_matrix_rtf     <- rbind(first_line_rtf, left_padding)
      for (i in 2:number_variables) {
           output_matrix_console <- c(output_variable_names[i], output_descriptives[i,], output_cor[i,])
           output_matrix_rtf <- c(output_variable_names[i], output_descriptives[i,], output_cor_rtf[i,])
@@ -96,17 +96,17 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
 #          third_line <- rep(" ", length(second_line))
 
-#          if (show_conf_interval==TRUE) {
-#               new_lines     <- rbind(first_line, second_line, third_line)
-#               new_lines     <- rbind(first_line, second_line, third_line)
-#               new_lines_rtf <- rbind(first_line_rtf, second_line_rtf, third_line)
-#          } else {
-#               new_lines     <- rbind(first_line, third_line)
-#               new_lines_rtf <- rbind(first_line_rtf, third_line)
-#          }
+         if (show_conf_interval==TRUE) {
+               new_lines     <- rbind(first_line, left_padding)
+               new_lines     <- rbind(first_line, left_padding)
+               new_lines_rtf <- rbind(first_line_rtf, left_padding)
+          } else {
+               new_lines     <- rbind(first_line, left_padding)
+               new_lines_rtf <- rbind(first_line_rtf, left_padding)
+          }
 
- #         output_matrix_console <- rbind(output_matrix_console, new_lines)
- #         output_matrix_rtf <- rbind(output_matrix_rtf, new_lines_rtf)
+          output_matrix_console <- rbind(output_matrix_console, new_lines)
+          output_matrix_rtf <- rbind(output_matrix_rtf, new_lines_rtf)
      }
 
 
