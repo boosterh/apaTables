@@ -91,22 +91,22 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
           first_line <- c(output_variable_names[i], output_descriptives[i,], output_cor[i,])
           first_line_rtf <- c(output_variable_names[i], output_descriptives[i,], output_cor_rtf[i,])
 
-#          second_line <- c(left_padding, output_ci[i,])
+# right here         second_line <- c(left_padding, output_ci[i,])
 #          second_line_rtf <- c(left_padding, output_ci_rtf[i,])
 
 #          third_line <- rep(" ", length(second_line))
 
-         if (show_conf_interval==TRUE) {
-               new_lines     <- rbind(first_line, left_padding)
+#         if (show_conf_interval==TRUE) {
 #               new_lines     <- rbind(first_line, left_padding)
-               new_lines_rtf <- rbind(first_line_rtf, left_padding)
-          } else {
-               new_lines     <- rbind(first_line, left_padding)
-               new_lines_rtf <- rbind(first_line_rtf, left_padding)
-          }
+#               new_lines     <- rbind(first_line, left_padding)
+#               new_lines_rtf <- rbind(first_line_rtf, left_padding)
+#          } else {
+#               new_lines     <- rbind(first_line, left_padding)
+#               new_lines_rtf <- rbind(first_line_rtf, left_padding)
+#          }
 
-          output_matrix_console <- rbind(output_matrix_console, new_lines)
-          output_matrix_rtf <- rbind(output_matrix_rtf, new_lines_rtf)
+          output_matrix_console <- rbind(output_matrix_console, first_line) #new_lines
+          output_matrix_rtf <- rbind(output_matrix_rtf, first_line_rtf) #new_lines_rtf
      }
 
 
@@ -158,7 +158,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
           output_matrix_rtf <- rbind(blankLine,output_matrix_rtf)
 
           if (show_conf_interval == TRUE) {
-               table_title <- "Means, standard deviations, and correlations with confidence intervals"
+               table_title <- "Means, standard deviations, and correlations"
                table_note <- "{\\i M} and {\\i SD} are used to represent mean and standard deviation, respectively."
 
           } else {
