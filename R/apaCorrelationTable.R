@@ -98,7 +98,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
          if (show_conf_interval==TRUE) {
                new_lines     <- rbind(first_line, left_padding)
-               new_lines     <- rbind(first_line, left_padding)
+#               new_lines     <- rbind(first_line, left_padding)
                new_lines_rtf <- rbind(first_line_rtf, left_padding)
           } else {
                new_lines     <- rbind(first_line, left_padding)
@@ -120,7 +120,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
 
      if (show_conf_interval==TRUE) {
-          table_title <- "Means, standard deviations, and correlations with confidence intervals\n"
+          table_title <- "Means, standard deviations, and correlations\n"
      } else {
           table_title <- "Means, standard deviations, and correlations\n"
      }
@@ -133,7 +133,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
      #make console output
      if (show_conf_interval == TRUE) {
-          table_note <- "Note. M and SD are used to represent mean and standard deviation, respectively.\nValues in square brackets indicate the 95% confidence interval.\nThe confidence interval is a plausible range of population correlations \nthat could have caused the sample correlation (Cumming, 2014).\n"
+          table_note <- "Note. M and SD are used to represent mean and standard deviation, respectively.\n"
      } else {
           table_note <- "Note. M and SD are used to represent mean and standard deviation, respectively.\n"
      }
@@ -159,7 +159,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
           if (show_conf_interval == TRUE) {
                table_title <- "Means, standard deviations, and correlations with confidence intervals"
-               table_note <- "{\\i M} and {\\i SD} are used to represent mean and standard deviation, respectively. Values in square brackets indicate the 95% confidence interval for each correlation. The confidence interval is a plausible range of population correlations that could have caused the sample correlation (Cumming, 2014)."
+               table_note <- "{\\i M} and {\\i SD} are used to represent mean and standard deviation, respectively."
 
           } else {
                table_title <- "Means, standard deviations, and correlations"
