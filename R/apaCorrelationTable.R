@@ -76,37 +76,37 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
      #weave
      left_padding   <- c(" ", " ", " ")
-     first_line     <- c(output_variable_names[1], output_descriptives[1,], output_cor[1,])
-     first_line_rtf <- c(output_variable_names[1], output_descriptives[1,], output_cor_rtf[1,])
+     output_matrix_console     <- c(output_variable_names[1], output_descriptives[1,], output_cor[1,])
+     output_matrix_rtf <- c(output_variable_names[1], output_descriptives[1,], output_cor_rtf[1,])
 
-     second_line     <- c(left_padding, output_ci[1,])
-     second_line_rtf <- c(left_padding, output_ci_rtf[1,])
+ #    second_line     <- c(left_padding, output_ci[1,])
+ #    second_line_rtf <- c(left_padding, output_ci_rtf[1,])
 
-     third_line <- rep(" ", length(second_line))
+ #    third_line <- rep(" ", length(second_line))
 
 
-     output_matrix_console <- rbind(first_line, second_line)
-     output_matrix_rtf     <- rbind(first_line_rtf, second_line_rtf)
+ #    output_matrix_console <- rbind(first_line, second_line)
+ #    output_matrix_rtf     <- rbind(first_line_rtf, second_line_rtf)
      for (i in 2:number_variables) {
-          first_line <- c(output_variable_names[i], output_descriptives[i,], output_cor[i,])
-          first_line_rtf <- c(output_variable_names[i], output_descriptives[i,], output_cor_rtf[i,])
+          output_matrix_console <- c(output_variable_names[i], output_descriptives[i,], output_cor[i,])
+          output_matrix_rtf <- c(output_variable_names[i], output_descriptives[i,], output_cor_rtf[i,])
 
-          second_line <- c(left_padding, output_ci[i,])
-          second_line_rtf <- c(left_padding, output_ci_rtf[i,])
+#          second_line <- c(left_padding, output_ci[i,])
+#          second_line_rtf <- c(left_padding, output_ci_rtf[i,])
 
-          third_line <- rep(" ", length(second_line))
+#          third_line <- rep(" ", length(second_line))
 
-          if (show_conf_interval==TRUE) {
-               new_lines     <- rbind(first_line, second_line, third_line)
-               new_lines     <- rbind(first_line, second_line, third_line)
-               new_lines_rtf <- rbind(first_line_rtf, second_line_rtf, third_line)
-          } else {
-               new_lines     <- rbind(first_line, third_line)
-               new_lines_rtf <- rbind(first_line_rtf, third_line)
-          }
+#          if (show_conf_interval==TRUE) {
+#               new_lines     <- rbind(first_line, second_line, third_line)
+#               new_lines     <- rbind(first_line, second_line, third_line)
+#               new_lines_rtf <- rbind(first_line_rtf, second_line_rtf, third_line)
+#          } else {
+#               new_lines     <- rbind(first_line, third_line)
+#               new_lines_rtf <- rbind(first_line_rtf, third_line)
+#          }
 
-          output_matrix_console <- rbind(output_matrix_console, new_lines)
-          output_matrix_rtf <- rbind(output_matrix_rtf, new_lines_rtf)
+ #         output_matrix_console <- rbind(output_matrix_console, new_lines)
+ #         output_matrix_rtf <- rbind(output_matrix_rtf, new_lines_rtf)
      }
 
 
