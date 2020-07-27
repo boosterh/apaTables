@@ -75,18 +75,16 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
 
 
      #weave
-     left_padding   <- c(" ", " ", " ")
-     first_line     <- c(output_variable_names[1], output_descriptives[1,], output_cor[1,])
-     first_line_rtf <- c(output_variable_names[1], output_descriptives[1,], output_cor_rtf[1,])
-
+ ##    left_padding   <- c(" ", " ", " ")
+     output_matrix_console     <- c(output_variable_names[1], output_descriptives[1,], output_cor[1,])
+     output_matrix_rtf <- c(output_variable_names[1], output_descriptives[1,], output_cor_rtf[1,])
+     
  #    second_line     <- c(left_padding, output_ci[1,])
  #    second_line_rtf <- c(left_padding, output_ci_rtf[1,])
-
  #    third_line <- rep(" ", length(second_line))
-
-
-     output_matrix_console <- rbind(first_line, left_padding)
-     output_matrix_rtf     <- rbind(first_line_rtf, left_padding)
+     
+ ##    output_matrix_console <- rbind(first_line, left_padding)
+ ##    output_matrix_rtf     <- rbind(first_line_rtf, left_padding)
      for (i in 2:number_variables) {
           first_line <- c(output_variable_names[i], output_descriptives[i,], output_cor[i,])
           first_line_rtf <- c(output_variable_names[i], output_descriptives[i,], output_cor_rtf[i,])
