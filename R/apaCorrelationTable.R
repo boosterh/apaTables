@@ -14,7 +14,7 @@
 #' apa.cor.table(attitude)
 #' apa.cor.table(attitude, filename="ex.CorTable1.doc")
 #' @export
-apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interval = TRUE, show.sig.stars = TRUE, landscape = TRUE) {
+apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interval = TRUE, show.sig.stars = TRUE, landscape = TRUE, var = NA) {
 
      # test git tower April 23
      data <- as.data.frame(data)
@@ -52,7 +52,7 @@ apa.cor.table<-function(data, filename = NA, table.number = NA, show.conf.interv
      output_ci_rtf <- matrix(" ", number_variables, number_columns)
 
      output_descriptives   <- matrix(" ",number_variables,2)
-     output_variable_names <- paste(as.character(1:number_variables),". ",names(data),sep="")
+     output_variable_names <- paste(var) ### as.character(1:number_variables),". ",names(data),sep="")
 
      for (i in 1:number_variables) {
           output_descriptives[i,1] <- txt.number(mean(data[,i], na.rm=TRUE))
